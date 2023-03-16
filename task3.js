@@ -1,11 +1,9 @@
-function callFunc (number) {
-    return sumNumbers(number);
-};
-  
-function sumNumbers (number) {
-    let result = number + number;
-    return result;
-};
-  
-let number = 10;
-console.log(callFunc(number));
+function sumNumbers(x) {
+    return function(y) {
+        return x + y;
+    }
+}
+
+const result = sumNumbers(5);
+let sum = result(5);
+console.log(sum);
